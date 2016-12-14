@@ -53,16 +53,28 @@
                 </div>
             </div>
             <div>
+<<<<<<< HEAD
                 <p>如果商品没有成交，支付定金将全额退回</p>
                 <p>交易密码 &nbsp;<input type="password" name="password"></p>
                 <p>
                     <button type="button">确认卖出</button>
                 </p>
+=======
+            <?php
+                echo '<form action="PayWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.$UnitPrice*$set.'&buybzj='.$buybzj.'" method="post">';
+            ?>
+                    <p>如果商品没有成交，支付定金将全额退回</p>
+                    <p>交易密码 &nbsp;<input type="password" name="password"></p>
+                    <p>
+                        <button type="submit">确认卖出</button>
+                    </p>
+                 </form>
+>>>>>>> 936943477/master
             </div>
         </div>
     </div>
 </section>
 <footer></footer>
-<script type="text/javascript" src="js/Payment.js"></script>
+<script type="text/javascript" src="js/paytwo.js"></script>
 </body>
 </html>

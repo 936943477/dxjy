@@ -1,3 +1,13 @@
+<?php
+    $id= $_REQUEST['id'];
+    $UnitPrice= $_REQUEST['buyUnitPric'];
+    $set= $_REQUEST['buyset'];
+    $chanpin= $_REQUEST['chanpin'];
+    $buybzj= $_REQUEST['buybzj'];
+    $baozhuang= $_REQUEST['baozhuang'];
+    $Total= $_REQUEST['Total'];
+    $password= $_REQUEST['password'];
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
