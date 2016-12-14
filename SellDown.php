@@ -36,25 +36,27 @@
         <div>
             <img src="image/pay-02.png" alt="">
         </div>
-        <?php
-        echo '<form action="payWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
-        ?>
-            <div>
+        <div>
+            <?php
+                echo '<form action="sellADeal.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
+            ?>
                 <div>
                     <p>购买定金</p>
                     <p>银行卡</p>
                     <p>手机验证码</p>
                 </div>
                 <div>
-                    <p><span>489.28</span> 元</p>
+                <?php
+                    echo '<p><span>'.$Total.'</span> 元</p>';
+                ?>
                     <p><select><option>-请选择-</option></select></p>
-                    <p><input type="text"></p>
+                    <p><input type="text" name="verification"></p>
                 </div>
                 <p>
-                    <button type="button">确认</button>
+                    <button type="submit">确认</button>
                 </p>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </section>
 <footer></footer>

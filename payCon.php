@@ -37,9 +37,9 @@
             <img src="image/pay-02.png" alt="">
         </div>
         <div>
-        <?php
-         echo '<form action="payWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
-        ?>
+            <?php
+             echo '<form action="payWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
+            ?>
             <div>
                 <p>购买定金</p>
                 <p>银行卡</p>

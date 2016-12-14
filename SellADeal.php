@@ -14,11 +14,11 @@
 
 
 
-        $act='buy';
+        $act='sell';
         $pid=$_REQUEST['id'];
         $UnitPrice=$_REQUEST['UnitPrice'];
 
-        $user=$_REQUEST['uesr'];  //用户
+        $user= $_REQUEST['user'];  //用户
 
         $time=date('Y-m-d H:i:s',time());
 
@@ -35,6 +35,7 @@
         		}else if($act=="sell"){
         			//卖出价大于必买价产生订单
                     echo $act;
+                    echo $user;
 
         		}
 
@@ -54,7 +55,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>新航线</title>
-    <link rel="stylesheet/less" href="css/PayWait.less">
+    <link rel="stylesheet/less" href="css/SellADeal.less">
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/less.min.js"></script>
     <script type="text/javascript" src="js/src/angular.min.js"></script>
@@ -71,9 +72,13 @@
             <img src="image/pay-03.png" alt="">
         </div>
         <div>
-            <img src="image/pay-04.png" alt="">
-            <h2>出价成功！<br>请您耐心等待成交，您也可在个人中心查看最新进展。</h2>
-            <a href="#">确认</a>
+            <div>
+                <img src="image/pay-04.png" alt="">
+            </div>
+            <div>
+                <h2>卖出成功！<br>请您耐心等待成交，您也可在个人中心查看最新进展。</h2>
+                <a href="#">确认</a>
+            </div>
         </div>
     </div>
 </section>
