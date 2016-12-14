@@ -1,3 +1,12 @@
+<?php
+    $id= $_REQUEST['id'];
+    $UnitPrice= $_REQUEST['sellUnitPric'];
+    $set= $_REQUEST['sellset'];
+    $user= $_REQUEST['user'];
+    $chanpin= $_REQUEST['chanpin'];
+    $buybzj= $_REQUEST['buybzj'];
+    $baozhuang= $_REQUEST['baozhuang'];
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -5,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>新航线</title>
-    <link rel="stylesheet/less" href="css/Payment.less">
+    <link rel="stylesheet/less" href="css/paytwo.less">
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/less.min.js"></script>
     <script type="text/javascript" src="js/src/angular.min.js"></script>
@@ -28,26 +37,32 @@
                     <p>购买单价</p>
                     <p>购买数量</p>
                     <p>总金额</p>
-                    <p>总金额</p>
+                    <p>保证金</p>
                     <p>包装快递费</p>
                     <p>总计</p>
                 </div>
                 <div>
-                    <p>唐卡投票</p>
-                    <p>10元</p>
-                    <p>100套</p>
-                    <p>1000元</p>
-                    <p>1000*0.03=30元</p>
-                    <p>1000*0.03=30元</p>
-                    <p><span>1180</span>元</p>
+                    <?php
+                                        echo "<p>".$chanpin."</p>";
+                                        echo "<p>".$UnitPrice."元</p>";
+                                        echo "<p>".$set."</p>";
+                                        echo "<p>".$UnitPrice*$set."元</p>";
+                                        echo "<p>".$buybzj."元</p>";
+                                        echo "<p>".$baozhuang."元</p>";
+                                        echo "<p><span>".($buybzj+$baozhuang)."</span>元</p>";
+                                    ?>
                 </div>
             </div>
             <div>
+            <?php
+                echo '<form action="payCon.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.$UnitPrice*$set.'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
+            ?>
                 <p>如果商品没有成交，支付定金将全额退回</p>
                 <p>交易密码</p>
                 <p>
-                    <button type="button">申请提现</button>
+                    <button type="button">确认卖出</button>
                 </p>
+            </form>
             </div>
         </div>
     </div>

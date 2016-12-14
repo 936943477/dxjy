@@ -2,6 +2,7 @@
     $id= $_REQUEST['id'];
     $UnitPrice= $_REQUEST['buyUnitPric'];
     $set= $_REQUEST['buyset'];
+    $user= $_REQUEST['user'];
     $chanpin= $_REQUEST['chanpin'];
     $buybzj= $_REQUEST['buybzj'];
     $baozhuang= $_REQUEST['baozhuang'];
@@ -13,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>新航线</title>
-    <link rel="stylesheet/less" href="css/Payment.less">
+    <link rel="stylesheet/less" href="css/paytwo.less">
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/less.min.js"></script>
     <script type="text/javascript" src="js/src/angular.min.js"></script>
@@ -61,7 +62,7 @@
                 </p>
 =======
             <?php
-                echo '<form action="PayWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.$UnitPrice*$set.'&buybzj='.$buybzj.'" method="post">';
+                echo '<form action="sellDown.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.$UnitPrice*$set.'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
             ?>
                     <p>如果商品没有成交，支付定金将全额退回</p>
                     <p>交易密码 &nbsp;<input type="password" name="password"></p>
