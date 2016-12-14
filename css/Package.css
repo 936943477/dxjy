@@ -112,14 +112,14 @@ body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div {
   display: inline-block;
   padding: 28px 6px;
 }
-body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input {
+body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div > form > div:nth-child(1) > input {
   box-sizing: border-box;
   width: 100px;
   border: 1px solid #EEEEEE;
   padding: 10px;
   margin: 0 0 27px 0;
 }
-body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > button {
+body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div > form > div:nth-child(2) > button {
   background-color: #D42F3D;
   color: #fff;
   border: none;
@@ -131,7 +131,7 @@ body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth
   float: right;
   margin: 0 63px 0 0;
 }
-body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > button {
+body > section > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > form > div:nth-child(2) > button {
   background-color: #fff;
   color: #D42F3D;
   border: 1px solid #D42F3D;

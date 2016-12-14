@@ -1,9 +1,10 @@
 <?php
     $id= $_REQUEST['id'];
-    $UnitPrice= $_REQUEST['UnitPrice'];
-    $set= $_REQUEST['set'];
-    $buySell= $_REQUEST['buySell'];
-    $uesr= $_REQUEST['uesr'];
+    $UnitPrice= $_REQUEST['buyUnitPric'];
+    $set= $_REQUEST['buyset'];
+    $chanpin= $_REQUEST['chanpin'];
+    $buybzj= $_REQUEST['buybzj'];
+    $baozhuang= $_REQUEST['baozhuang'];
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -35,23 +36,25 @@
                     <p>购买单价</p>
                     <p>购买数量</p>
                     <p>总金额</p>
-                    <p>总金额</p>
+                    <p>保证金</p>
                     <p>包装快递费</p>
                     <p>总计</p>
                 </div>
                 <div>
-                    <p>唐卡投票</p>
-                    <p><?php echo $UnitPrice?></p>
-                    <p>100套</p>
-                    <p>1000元</p>
-                    <p>1000*0.03=30元</p>
-                    <p>1000*0.03=30元</p>
-                    <p><span>1180</span>元</p>
+                <?php
+                    echo "<p>".$chanpin."</p>";
+                    echo "<p>".$UnitPrice."元</p>";
+                    echo "<p>".$set."</p>";
+                    echo "<p>".$UnitPrice*$set."元</p>";
+                    echo "<p>".$buybzj."元</p>";
+                    echo "<p>".$baozhuang."元</p>";
+                    echo "<p><span>".($UnitPrice*$set+$buybzj+$baozhuang)."</span>元</p>";
+                ?>
                 </div>
             </div>
             <div>
                 <p>如果商品没有成交，支付定金将全额退回</p>
-                <p>交易密码</p>
+                <p>交易密码 &nbsp;<input type="password" name="password"></p>
                 <p>
                     <button type="button">确认卖出</button>
                 </p>
