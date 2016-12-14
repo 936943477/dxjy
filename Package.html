@@ -44,24 +44,26 @@
                         <div>
                             <form action="paytwo.php" method="post">
                                 <div>
-                                    <input  type="text" ng-model="Bquantity" id="buyUnitPric">&nbsp;元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="text" ng-model="Bprice" id="buyset">&nbsp;套
+                                    <input  type="text" ng-model="Bquantity" id="buyUnitPric" name="buyUnitPric">&nbsp;元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="text" ng-model="Bprice" id="buyset" name="buyset">&nbsp;套
                                 </div>
                                 <div>
-                                    <button type="button" id="buy">买入</button>
+                                    <button type="submit" id="buy">买入</button>
                                     <span>共计：{{Bprice*Bquantity | currency:"￥"}}元</span>
                                 </div>
                             </form>
                         </div>
                         <div>
-                            <div>
-                                <input  type="text" ng-model="Squantity" id="sellUnitPrice">&nbsp;元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="text" ng-model="Sprice" id="sellset">&nbsp;套
-                            </div>
-                            <div>
-                                <button type="button" id="sell">卖出</button>
-                                <span>共计：{{Sprice*Squantity | currency:"￥"}}元</span>
-                            </div>
+                            <form action="SellOut.php" method="post">
+                                <div>
+                                    <input  type="text" ng-model="Squantity" id="sellUnitPrice">&nbsp;元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="text" ng-model="Sprice" id="sellset">&nbsp;套
+                                </div>
+                                <div>
+                                    <button type="button" id="sell">卖出</button>
+                                    <span>共计：{{Sprice*Squantity | currency:"￥"}}元</span>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

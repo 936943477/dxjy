@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68bc0f9c-9570-4696-887c-17fda18889ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/1124.iml" afterPath="$PROJECT_DIR$/.idea/1124.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/doBuySell.php" afterPath="$PROJECT_DIR$/data/doBuySell.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/doaction.php" afterPath="$PROJECT_DIR$/data/doaction.php" />
-    </list>
+    <list default="true" id="68bc0f9c-9570-4696-887c-17fda18889ed" name="Default" comment="" />
     <ignored path="1124.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doBuySell.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="doBuySell.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/doBuySell.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
@@ -75,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paytwo.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="paytwo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/paytwo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="114">
               <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
               <folding />
             </state>
@@ -325,12 +320,12 @@
       <workItem from="1481594181967" duration="22287000" />
       <workItem from="1481682396091" duration="5663000" />
       <workItem from="1481692995343" duration="9000" />
-      <workItem from="1481693011240" duration="977000" />
+      <workItem from="1481693011240" duration="1091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187107000" />
+    <option name="totallyTimeSpent" value="187221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,20 +657,12 @@
       </provider>
     </entry>
     <entry file="file://D:/936943477/FileRecv/ajax_day03_all/ajax_day03/1_empadd.html" />
-    <entry file="file://$PROJECT_DIR$/paytwo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/Package.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
           <folding>
-            <marker date="1481692721000" expanded="true" signature="1029:1030" ph="{...}" />
+            <marker date="1481694100000" expanded="true" signature="1029:1030" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -718,6 +705,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paytwo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
           <folding />
         </state>
       </provider>
