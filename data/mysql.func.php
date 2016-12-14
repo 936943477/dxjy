@@ -17,6 +17,8 @@ function connect(){
 	return $link;
 }
 
+
+
 /**
  * 完成记录插入的操作
  * @param string $table

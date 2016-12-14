@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.5/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet/less" href="css/register.less">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/less.min.js"></script>
+    <script src="bootstrap-3.3.5/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li><a href="http://www.xhangxian.com/"><img src="img/01.jpg" alt="" height="62px"></a></li>
+            <li><a href="http://www.xhangxian.com/">首页</a></li>
+            <li><a href="http://www.xhangxian.com/information">邮币卡资讯</a></li>
+            <li><a href="http://www.xhangxian.com/zonghe">电子盘行情</a></li>
+            <li><a href="http://www.xhangxian.com/wiki">邮币卡百科</a></li>
+            <li><a href="http://www.xhangxian.com/wenjiaosuo">文交所</a></li>
+            <li><a href="http://www.xhangxian.com/varietie">交易产品</a></li>
+            <li><a href="#">定向交易</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div></div>
+        <div id="asdfg"></div>
+        <div>
+            <form class="form-horizontal" role="form" method="post" name="NewRouteRegistration" action="http://www.xhangxian.com/regcheck.php" accept-charset="UTF-8">
+                <div class="txzcxx">
+                    <div class="form-group">
+                        <label for="inputUser" class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" autocomplete="off" id="inputUser" placeholder="您的账户名和登录名" name="user" maxlength="20"><span class="duicuo"></span>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="建议至少使用两种字符组合"  maxlength="20"><span class="duicuo"></span>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPasswordRepeat" class="col-sm-2 control-label">重复输入密码</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" id="inputPasswordRepeat" name="passwordepeat" placeholder="请再次输入密码"  maxlength="20"><span class="duicuo"></span>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">所属地区</label>
+                        <div class="col-sm-6">
+                            <div>
+                                <select id="s_province" name="s_province" class="form-control"></select>
+                            </div>
+                            <div>
+                                <select id="s_city" name="s_city" class="form-control"></select>
+                            </div>
+                            <div>
+                                <select id="s_county" name="s_county" class="form-control"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-5">
+                            <input type="text" autocomplete="off"  class="form-control" id="input" placeholder="详细地址" name="DetailedAddress">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputVerificationCode" class="col-sm-2 control-label">验证码</label>
+                        <div class="col-sm-5">
+                            <div>
+                                <input type="text" maxlength="4" class="form-control" id="inputVerificationCode" placeholder="请输入验证码" autocomplete="off" >
+                                <canvas width="105px" height="32px" id="canvas">您的浏览器不支持Canvas！</canvas>
+                            </div>
+                            <span class="duicuo"></span>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button id="xyb" class="btn btn-default" type="button" disabled="disabled">下一步</button>
+                    </div>
+                </div>
+                <div class="bdyhk">
+                    <div class="form-group">
+                        <label for="inputBankCard" class="col-sm-2 control-label">银行卡号</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputBankCard" name="BankCard" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" autocomplete="off">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputOpenAnAccount" class="col-sm-2 control-label">开户名</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputOpenAnAccount" name="OpenAnAccount" autocomplete="off">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputID" class="col-sm-2 control-label">开户身份证号</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputID" name="inputID" autocomplete="off">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')">银行预留手机号</label>
+                        <div class="col-sm-4">
+                            <div>
+                                <input type="text" class="form-control" id="phone" name="passwordepeat"  autocomplete="off">
+                                <button class="btn btn-default" type="button" id="fsyym">发送验证码</button>
+                            </div>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputphoneVerificationCode" class="col-sm-2 control-label">手机验证码</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="inputphoneVerificationCode" name="phoneVerificationCode" autocomplete="off"><span class="duicuo"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button id="xiayibu" class="btn btn-default" type="submit" disabled="disabled">下一步</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/register.js"></script>
+    <script src="js/CS.js"></script>
+    <script>
+        //$("#asdfg").css("background",'url("img/05.jpg")');
+    </script>
+</body>
+</html>

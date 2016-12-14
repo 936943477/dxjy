@@ -46,10 +46,10 @@ $result = compact("chanpin", "pDesc", "tupian", "buy", "sell", "buybzj", "sellbz
 
 $res=insert("product",$result);
 if($res){
-		echo "<p>添加成功!</p><a href='../adman/product.html' target='mainFrame'>继续添加</a>";
+		echo "<p>添加成功!</p><a href='../admin/product.html' target='mainFrame'>继续添加</a>";
 	}else{
 
-		echo "<p>添加失败!</p><a href='../adman/product.html' target='mainFrame'>重新添加</a>";
+		echo "<p>添加失败!</p><a href='../admin/product.html' target='mainFrame'>重新添加</a>";
 		
 	}
 

@@ -1,12 +1,21 @@
 <?php
-    $id= $_REQUEST['id'];
-    $UnitPrice= $_REQUEST['buyUnitPric'];
-    $set= $_REQUEST['buyset'];
-    $chanpin= $_REQUEST['chanpin'];
-    $buybzj= $_REQUEST['buybzj'];
-    $baozhuang= $_REQUEST['baozhuang'];
-    $Total= $_REQUEST['Total'];
+
     $password= $_REQUEST['password'];
+    if($password==123456){
+        $id= $_REQUEST['id'];
+        $UnitPrice= $_REQUEST['buyUnitPric'];
+        $set= $_REQUEST['buyset'];
+        $chanpin= $_REQUEST['chanpin'];
+        $buybzj= $_REQUEST['buybzj'];
+        $baozhuang= $_REQUEST['baozhuang'];
+        $Total= $_REQUEST['Total'];
+    }else{
+    echo "<p>密码错误,请重新输入！</p>";
+    }
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
