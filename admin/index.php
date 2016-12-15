@@ -1,3 +1,7 @@
+<?php
+require_once 'include.php';
+checkLogined();
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -119,7 +123,7 @@
                             <td>{{x.UnitPrice}}</td>
                             <td>{{x.datas}}</td>
                             <td>{{x.time}}</td>
-                            <td><a href="#">删除</a></td>
+                            <td><a href="#" class="cjdelete" name="{{x.id}}">删除</a></td>
                         </tr>
                         </tbody>
                     </table>

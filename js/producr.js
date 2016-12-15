@@ -8,7 +8,6 @@ function clickLoad() {
 }//class为section_default img  load修改svg
 clickLoad();
 //***** anglar *****
-var angLi_2="";
 angular.module('myApp', []).controller('siteCtrl', function($scope, $http) {
     function getjson(url,i){
         $http.get(url).success(function (response) {
@@ -19,7 +18,6 @@ angular.module('myApp', []).controller('siteCtrl', function($scope, $http) {
                     ($scope.cj=response);
             if (i==2){
                 $scope.sl=option($scope.cj);
-                angLi_2=response;
             }
         });
     }
@@ -91,13 +89,13 @@ function Privacy(){
     });
 }
 //*********************************** 删除  编辑 确认
-function deletes(ids,cla) {
+function deletes(ids,cla,url) {
     $("#delete_Determine").click(function (event) {
         event.preventDefault();
-        $.get("../data/delUpdate.php",{id:ids,act:cla},function (data) {
+        $.get(url,{id:ids,act:cla},function (data) {
             $("#promptBox").html('<div id="promptBox"> <div> <img src="../image/Confirm-02.png" alt=""> <span>'+data+'</span> </div> </div>');
             window.setTimeout(function () {
-                window.location.href="http://www.xhangxian.com/dxjy/admin/";
+                window.location.href="index.php";
             },1000);
         });
     });
@@ -128,10 +126,11 @@ function clickAnglar(){
     //************************************ 删除  编辑
     $(".delete").click(function (event) {
         event.preventDefault();
+        var url="../data/delUpdate.php";
         $(".delete_Confirm").css("display","block");
         var names=$(this)[0].name;
         var cla=$(this)[0].className;
-        deletes(names,cla);
+        deletes(names,cla,url);
     });
     $("#Span_delete_Cancel").click(function (event) {
         event.preventDefault();
@@ -151,8 +150,7 @@ function clickAnglar(){
         var all=ctra();
         a_lirit(all[2],all[0],all[1][0]);
     });
-    op.mouseleave(function (event) {
-        event.preventDefault();
+    op.mouseleave(function () {
         var val=$.trim($(this).val());//selest 的 value
         if (val!="-请选择-"){
             if (judge=="-请选择-"){
@@ -187,6 +185,14 @@ function clickAnglar(){
         clickLoad();//启动clickLoad()
         if ($(this).text()=="出价管理"){
             $("#BidManagement").html(html_divT);
+            $(".cjdelete").click(function (event) {
+                event.preventDefault();
+                var url="../data/delChujia.php";
+                $(".delete_Confirm").css("display","block");
+                var names=$(this)[0].name;
+                var cla=$(this)[0].className.slice(2);
+                deletes(names,cla,url);
+            });//  出价管理 click事件
         }
         xianshi(); //**************分页
         if ($(this).text()=="用户管理"){
