@@ -271,6 +271,23 @@ body > section > div:nth-child(1) > div > div:nth-child(6) > div:nth-child(3) > 
   padding: 5px 5px;
   border-radius: 5px;
 }
+body > section > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(3) > table > tbody > tr.displayTr,
+body > section > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(3) > table > tbody > tr.displayTr,
+body > section > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(3) > table > tbody > tr.displayTr,
+body > section > div:nth-child(1) > div > div:nth-child(6) > div:nth-child(3) > table > tbody > tr.displayTr {
+  display: table-row !important;
+}
+body > section > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(3) > table > tbody > tr.displayTr a,
+body > section > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(3) > table > tbody > tr.displayTr a,
+body > section > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(3) > table > tbody > tr.displayTr a,
+body > section > div:nth-child(1) > div > div:nth-child(6) > div:nth-child(3) > table > tbody > tr.displayTr a {
+  display: inline-block;
+  line-height: 18px;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
 body > section > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(3) > p:nth-child(3),
 body > section > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(3) > p:nth-child(3),
 body > section > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(3) > p:nth-child(3),

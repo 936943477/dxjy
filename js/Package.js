@@ -10,7 +10,6 @@ app.controller('siteCtrl',function ($scope, $http) {
         $http.get(url,{params:{id:www}}).success(function (response) {
             $scope.cp=response;
             T=response;
-            console.log(T);
             get(T);
         });
     }
@@ -19,7 +18,7 @@ app.controller('siteCtrl',function ($scope, $http) {
 //*********************************  form
 function get(T){
     var form=$("form");
-    form[0].action+="?id="+www+"&chanpin="+T.chanpin+"&buybzj="+T.buybzj+"&baozhuang="+T.baozhuang+"&user=啦啦啦啦";
-    form[1].action+="?id="+www+"&chanpin="+T.chanpin+"&buybzj="+T.buybzj+"&baozhuang="+T.baozhuang+"&user=啦啦啦啦";
+    form[0].action+="?id="+www+"&chanpin="+T.chanpin+"&buybzj="+T.buybzj+"&baozhuang="+T.baozhuang;
+    form[1].action+="?id="+www+"&chanpin="+T.chanpin+"&buybzj="+T.buybzj+"&baozhuang="+T.baozhuang;
 }
 

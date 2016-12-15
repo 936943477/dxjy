@@ -1,11 +1,14 @@
 <?php
+require_once 'include.php';
+checkLogined();
     $id= $_REQUEST['id'];
     $UnitPrice= $_REQUEST['buyUnitPric'];
     $set= $_REQUEST['buyset'];
-    $user= $_REQUEST['user'];
+    $user= $_SESSION['username'] ;
     $chanpin= $_REQUEST['chanpin'];
     $buybzj= $_REQUEST['buybzj'];
     $baozhuang= $_REQUEST['baozhuang'];
+
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -55,7 +58,7 @@
             </div>
             <div>
             <?php
-                echo '<form action="sellDown.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.$UnitPrice*$set.'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
+                echo '<form action="payCon.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.$UnitPrice*$set.'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
             ?>
                     <p>如果商品没有成交，支付定金将全额退回</p>
                     <p>交易密码 &nbsp;<input type="password" name="password"></p>

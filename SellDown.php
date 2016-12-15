@@ -1,4 +1,6 @@
 <?php
+require_once 'include.php';
+checkLogined();
     $password= $_REQUEST['password'];
     if($password==123456){
         $id= $_REQUEST['id'];
@@ -38,7 +40,7 @@
         </div>
         <div>
             <?php
-                echo '<form action="sellADeal.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
+                echo '<form action="SellADeal.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
             ?>
                 <div>
                     <p>购买定金</p>

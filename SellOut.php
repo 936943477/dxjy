@@ -1,8 +1,10 @@
 <?php
+require_once 'include.php';
+checkLogined();
     $id= $_REQUEST['id'];
     $UnitPrice= $_REQUEST['sellUnitPric'];
     $set= $_REQUEST['sellset'];
-    $user= $_REQUEST['user'];
+    $user= $_SESSION['username'] ;
     $chanpin= $_REQUEST['chanpin'];
     $buybzj= $_REQUEST['buybzj'];
     $baozhuang= $_REQUEST['baozhuang'];

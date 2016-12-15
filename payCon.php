@@ -1,4 +1,6 @@
 <?php
+require_once 'include.php';
+checkLogined();
     $password= $_REQUEST['password'];
     if($password==123456){
         $id= $_REQUEST['id'];
@@ -20,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>新航线</title>
-    <link rel="stylesheet/less" href="css/PayCon.less">
+    <link rel="stylesheet/less" href="css/payCon.less">
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/less.min.js"></script>
     <script type="text/javascript" src="js/src/angular.min.js"></script>
@@ -38,7 +40,7 @@
         </div>
         <div>
             <?php
-             echo '<form action="payWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
+             echo '<form action="PayWait.php?id='.$id.'&chanpin='.$chanpin.'&buybzj='.$buybzj.'&baozhuang='.$baozhuang.'&UnitPrice='.$UnitPrice.'&Total='.($UnitPrice*$set).'&buybzj='.$buybzj.'&set='.$set.'&user='.$user.'" method="post">';
             ?>
             <div>
                 <p>购买定金</p>

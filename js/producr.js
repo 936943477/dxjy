@@ -1,34 +1,14 @@
 $("header").load("../hearder.html");
 $("footer").load("../footer.html");
 /***** section id section_div*****/
+//var html_tbody="",html_select_op="";//************************************************** anglar.js 生成的html
 function clickLoad() {
     var width=$(".section_details>span").css("width");//获得详情页的标题的width
     $(".section_details>p>span").css("width",width);//width的值付给红色条
 }//class为section_default img  load修改svg
 clickLoad();
-$("#section_div li").click(function (event) {
-    event.preventDefault();
-    var li=$("#section_div>div>div>ul>li");//获得所有#section_div 下的li
-    var divSon=$("#section_div>div>div>div:not(.form_div,.editDetails)");//获得所有#section_div 下的div
-    $(".section_span").removeClass("section_span");//当前class为 section_span class为 “”
-    $(".section_details").removeClass("section_details");//当前class为 section_details class为 “”
-    $(this).addClass('section_default').siblings('.section_default').removeClass('section_default');//当前li的class为section_default 其余的为“”
-    $(this)[0].children[0].className="section_span";//当前li的class为section_span
-    for (var i=0;i<divSon.length;i++){
-        if (li[i].className=="section_default"){
-            divSon[i].className="section_details";
-            break;
-        }
-    }//循环给对应的div  附上class section_details
-    clickLoad();//启动clickLoad()
-    xianshi();
-    if ($(this).text()=="用户管理"){
-        Privacy();
-    }
-});//导航的li点击事件
-//*************** $.get();
-//***********************  anglar.js
 //***** anglar *****
+var angLi_2="";
 angular.module('myApp', []).controller('siteCtrl', function($scope, $http) {
     function getjson(url,i){
         $http.get(url).success(function (response) {
@@ -39,6 +19,7 @@ angular.module('myApp', []).controller('siteCtrl', function($scope, $http) {
                     ($scope.cj=response);
             if (i==2){
                 $scope.sl=option($scope.cj);
+                angLi_2=response;
             }
         });
     }
@@ -49,33 +30,33 @@ angular.module('myApp', []).controller('siteCtrl', function($scope, $http) {
 transaction();
 function transaction() {
     window.setTimeout(function () {
+        //html_tbody=$("#section_div>div:nth-child(1)>div>div:not(.form_div,.editDetails) tbody");
+        //html_select_op=$(".select_op");
         xianshi();
         clickAnglar();
-    },500);
+    },1000);
 }//anglar 执行完后
 function xianshi() {
     $(".section_details tr.ng-scope.displayTr").removeClass("displayTr");
-    var tr=$("#section_div .section_details tr:not(:nth-child(1))");//获得#section_div>div:nth-child(2) tr
+    var all=ctra();
+    if ((all[1][0].innerHTML)!="1"){
+        all[1][0].innerHTML="1";
+    }
+    for (var i=0;i<(all[0].length>6?6:all[0].length);i++){
+        all[0][i].className+=" displayTr";
+    }//默认的第一页 获得class displayTr
+}//交易明细的分页 每6tr为一页//延迟500ms
+function ctra(){
+    var tr=$(".section_details tr:not(:nth-child(1))");//获得#section_div>div:nth-child(2) tr
     var a=$(".section_details .a-yeshu");
-    a.html("1");
     var c=parseInt(tr.length/6);//计算出会有多少页
     if (c*6<tr.length){
         c++;
     }//如果c有小数点 进1
-    for (var i=0;i<(tr.length>6?6:tr.length);i++){
-        tr[i].className+=" displayTr";
-    }//默认的第一页 获得class displayTr
-    $(".section_details .a-left").click(function (event) {
-        event.preventDefault();
-        a_lirit(1,tr,a);
-    });
-    $(".section_details .a-right").click(function (event) {
-        event.preventDefault();
-        a_lirit(c,tr,a);
-    });
-}//交易明细的分页 每6tr为一页//延迟500ms
+    return [tr,a,c];
+}//分页换页的相应数据
 function a_lirit(c,tr,a) {
-    var x=parseInt(a.html());
+    var x=parseInt(a.innerHTML);
     if (c==1){
         if (x==c){
             return "";
@@ -89,8 +70,8 @@ function a_lirit(c,tr,a) {
             x++;
         }
     }
-    a.html(x);
-    $(".section_details tr.ng-scope.displayTr").removeClass("displayTr");
+    a.innerHTML=x;
+    $(".section_details tr.displayTr").removeClass("displayTr");
     for (var i=(x-1)*6;i<x*6;i++){
         if (i==tr.length){
             break;
@@ -123,9 +104,12 @@ function deletes(ids,cla) {
 }
 //********************************** anglar 完成后 click
 function clickAnglar(){
-    var html_divT=$("#BidManagement").html();
-    var judge=$.trim($(".select_op").val());
-    /********************************   添加新产品   **********************************/
+    var li=$("#section_div li");//获得所有#section_div 下的li
+    var html_divT=$("#BidManagement").html();//获得内容 #BidManagement
+    var op=$(".select_op");//得到 .select_op
+    var judge=$.trim(op.val());
+    var tr="";
+        /********************************   添加新产品   **********************************/
     $(".addpro").click(function (event) {
         event.preventDefault();
         $(".section_details").removeClass("section_details");
@@ -157,17 +141,58 @@ function clickAnglar(){
         event.preventDefault();
         $(".delete_Confirm").css("display","none");
     });
-    $(".select_op").mouseleave(function (event) {
+    $(".a-left").click(function (event) {
         event.preventDefault();
-        var val=$.trim($(this).val());
-        if (judge=="-请选择-"){
-            select_op(val);
+        var all=ctra();
+        a_lirit(1,all[0],all[1][0]);
+    });
+    $(".a-right").click(function (event) {
+        event.preventDefault();
+        var all=ctra();
+        a_lirit(all[2],all[0],all[1][0]);
+    });
+    op.mouseleave(function (event) {
+        event.preventDefault();
+        var val=$.trim($(this).val());//selest 的 value
+        if (val!="-请选择-"){
+            if (judge=="-请选择-"){
+                tr=select_op(val);
+            }else if (judge!="-请选择-"&&judge!=val){
+                $("#BidManagement").html(function () {
+                    var Xhtml="<tr><td>出价人</td><td>产品</td><td>方向</td><td>单价</td><td>数量</td><td>出价时间</td><td>操作</td></tr>";
+                    for (var i=0;i<tr.length;i++){
+                        Xhtml+="<tr>"+tr[i].innerHTML+"</tr>";
+                    }
+                    return Xhtml;
+                });
+                xianshi();//启动分页
+            }
             judge=val;
-        }else if (judge!=val){
-            $("#BidManagement").html(html_divT);
-            select_op(val);
         }
     });
+    /*******************************************************************************************/
+    li.click(function (event) {
+        event.preventDefault();
+        var divSon=$("#section_div>div>div>div:not(.form_div,.editDetails)");//获得所有#section_div 下的div
+        $(".section_span").removeClass("section_span");//当前class为 section_span class为 “”
+        $(".section_details").removeClass("section_details");//当前class为 section_details class为 “”
+        $(this).addClass('section_default').siblings('.section_default').removeClass('section_default');//当前li的class为section_default 其余的为“”
+        $(this)[0].children[0].className="section_span";//当前li的class为section_span
+        for (var i=0;i<divSon.length;i++){
+            if (li[i].className=="section_default"){
+                divSon[i].className="section_details";
+                break;
+            }
+        }//循环给对应的div  附上class section_details
+        clickLoad();//启动clickLoad()
+        if ($(this).text()=="出价管理"){
+            $("#BidManagement").html(html_divT);
+        }
+        xianshi(); //**************分页
+        if ($(this).text()=="用户管理"){
+            Privacy();
+        }
+    });//导航的li点击事件
 }//*********************************页面完成后的 事件
 //********************************** option select
 function option(x){
@@ -182,10 +207,11 @@ function option(x){
         }
     }
     return tmp;
-}
+}//************************ selest 获得不相同的 option
 function select_op(val){
-    var tr=$('.section_details table tr:not([name*="'+val+'"]');
-    tr.splice(0,1);
-    tr.remove();
-    xianshi();
+    var tr=$('.section_details table tr:not([name*="'+val+'"])');//获得非 value的tr
+    tr.splice(0,1);// 去掉第一个tr
+    tr.remove();//删除 被选中tr
+    xianshi();//启动分页
+    return tr;//返回 被选中的tr
 }

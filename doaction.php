@@ -23,7 +23,7 @@ $filePath = $uploadDir . $randName . '.' . $ext;
 
 $result = move_uploaded_file($tmpName, $filePath);
 if (!$result) {
-echo "<p>商品图片上传失败,请重新添加！</p><a href='../admin/index.php'>重新添加</a>";
+echo "<p>商品图片上传失败,请重新添加！</p><a href='../adman/product.html'>重新添加</a>";
 exit;
 }
 

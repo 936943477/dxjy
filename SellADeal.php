@@ -1,6 +1,6 @@
 <?php
-        require_once 'data/mysql.func.php';
-        connect();
+require_once 'include.php';
+checkLogined();
 
     $verification= $_REQUEST['verification'];
     if($verification==123456){
@@ -19,7 +19,6 @@
         $UnitPrice=$_REQUEST['UnitPrice'];
 
         $user= $_REQUEST['user'];  //用户
-
         $time=date('Y-m-d H:i:s',time());
 
         $result = compact("act", "pid", "UnitPrice", "datas", "user",  "time");
@@ -35,8 +34,6 @@
         		}else if($act=="sell"){
         			//卖出价大于必买价产生订单
                     echo $act;
-                    echo $user;
-
         		}
 
         	}else{
@@ -77,7 +74,7 @@
             </div>
             <div>
                 <h2>卖出成功！<br>请您耐心等待成交，您也可在个人中心查看最新进展。</h2>
-                <a href="#">确认</a>
+                <a href="user/index.php">确认</a>
             </div>
         </div>
     </div>
