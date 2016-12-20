@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet/less" href="../css/phone.less">
+    <title></title>
+    <script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/less.min.js"></script>
+    <script type="text/javascript" src="../js/src/angular.min.js"></script>
+</head>
+<body>
+    <header></header>
+    <section>
+        <div>
+            <form action="../data/updateUser.php?act=phone&id=" method="post">
+                <div>
+                    <p>新手机号：</p><input type="text" name="phone">
+                </div>
+                <div>
+                    <p>再次输入新手机号</p><input type="text" name="verification" autocomplete="off">
+                    <div class="div">
+                        不一致
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" disabled="disabled" class="button">提交</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer></footer>
+    <script type="text/javascript" src="../js/phone.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style-type: none;
+}
+body > header > div > ul {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: justify;
+  height: 62px;
+}
+body > header > div > ul > li:not(:nth-child(9)) {
+  display: inline-block;
+  vertical-align: top;
+}
+body > header > div > ul > li:not(:nth-child(9)) > a {
+  display: block;
+  line-height: 62px;
+  color: #666;
+  padding: 0 10px;
+}
+body > header > div > ul > li:not(:nth-child(9)) > a > img {
+  display: block;
+}
+body > header > div > ul > li:not(:nth-child(9)) > a:hover {
+  color: #fff;
+  background-color: #32A5E7;
+  transition: all 0.45s linear;
+}
+body > header > div > ul > li:not(:nth-child(9)) > .default {
+  color: #fff;
+  background-color: #32A5E7;
+}
+body > header > div > ul > li:nth-child(1) > a {
+  padding: 0;
+}
+body > header > div > ul > li:nth-child(9) {
+  width: 100%;
+  display: inline-block;
+}
+body > section {
+  text-align: center;
+  height: 849px;
+}
+body > section > div {
+  margin: 160px 0 0 0;
+  text-align: left;
+  display: inline-block;
+}
+body > section > div > form div {
+  position: relative;
+}
+body > section > div > form div > p {
+  line-height: 32px;
+}
+body > section > div > form div > input {
+  outline: none;
+  height: 27px;
+  margin: 0 0 20px 0;
+  width: 200px;
+}
+body > section > div > form div > button {
+  background-color: #D42F3D;
+  color: #FFFFFF;
+  border: none;
+  padding: 7px 16px;
+  margin: 16px 0 0 96px;
+}
+body > section > div > form div > div.ul {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  right: -210px;
+  top: 0;
+  background-color: #FFF5D6;
+  border: 1px solid #D3A54A;
+  padding: 5px;
+}
+body > section > div > form div > div.ul > ul > li > i {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background: url("../image/password-00.png") no-repeat;
+  background-position: 0 -26px;
+}
+body > section > div > form div > div.ul > ul > li > span {
+  display: inline-block;
+  line-height: 12px;
+  font-size: 12px;
+}
+body > section > div > form div > div.ul > ul > li > .iback {
+  background-position: 0 -48px;
+}
+body > section > div > form div > div.ul > div {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #FFF5D6;
+  border: 1px solid #D3A54A;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: -6px;
+  top: 40px;
+  z-index: 30;
+  border-right: none;
+  border-bottom: none;
+}
+body > section > div > form div > div.ul > p {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 10px;
+  width: 220px;
+  height: 34px;
+  overflow: hidden;
+  border: 1px solid #ffbbba;
+  background-color: #ffefef;
+}
+body > section > div > form div > div.div {
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  top: 32px;
+  left: 100%;
+  margin-left: 10px;
+  padding-left: 10px;
+  width: 220px;
+  height: 29px;
+  line-height: 29px;
+  overflow: hidden;
+  border: 1px solid #ffbbba;
+  background-color: #ffefef;
+}
+body > section > div > form div > div.dis {
+  display: block;
+}
+body > footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 63px;
+}

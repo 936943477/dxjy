@@ -1,7 +1,4 @@
-<?php
-require_once '../include.php';
-checkLogined();
-?>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -47,16 +44,16 @@ checkLogined();
                             <tr>
                                 <td>商品名</td><td>交易方向</td><td>单价</td><td>数量</td><td>交易金额</td><td>时间</td><td>状态</td><td>操作</td>
                                 </tr>
-                            <!--<tr ng-repeat='x in jy'>
-                                <td>{{x.CommodityName}}</td>
-                                <td>{{x.TradingDirection}}</td>
+                            <tr ng-repeat='x in jy'>
+                                <td>{{x.chanpin}}</td>
+                                <td>{{x.act}}</td>
                                 <td>{{x.UnitPrice}}</td>
-                                <td>{{x.quantity}}</td>
-                                <td>{{x.TransactionAmount}}</td>
+                                <td>{{x.datas}}</td>
+                                <td>{{x.UnitPrice*x.datas}}</td>
                                 <td>{{x.time}}</td>
-                                <td>{{x.state}}</td>
-                                <td>{{x.operation}}</td>
-                                </tr>-->
+                                <td>**</td>
+                                <td>**</td>
+                                </tr>
                             </tbody>
                         </table>
                         <p>
@@ -108,28 +105,28 @@ checkLogined();
                         <span></span>
                     </p>
                     <div>
-                    <!--<ul>
+                    <ul class="privacy">
                         <li>
                             <span>绑定银行卡</span>
-                            <span>{{aq.A}}</span>
-                            <a href='#'>修改</a>
+                            <span>{{aq.bank}}</span>
+                            <a href='phone.html'>修改</a>
                         </li>
                         <li>
                             <span>绑定手机</span>
-                            <span>{{aq.B}}</span>
+                            <span>{{aq.phone}}</span>
                             <a href='#'>修改</a>
                         </li>
                         <li>
                             <span>实名认证</span>
-                            <span>{{aq.C}}</span>
+                            <span>{{aq.idcard}}</span>
                             <a href='#'>修改</a>
                         </li>
                         <li>
                             <span>交易密码</span>
-                            <span>{{aq.D}}</span>
-                            <a href='#'>修改</a>
+                            <span class="pass">{{aq.jyword}}</span>
+                            <a href='password.html'>修改</a>
                         </li>
-                        </ul>-->
+                        </ul>
                     </div>
                 </div>
             </div>

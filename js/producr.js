@@ -28,8 +28,6 @@ angular.module('myApp', []).controller('siteCtrl', function($scope, $http) {
 transaction();
 function transaction() {
     window.setTimeout(function () {
-        //html_tbody=$("#section_div>div:nth-child(1)>div>div:not(.form_div,.editDetails) tbody");
-        //html_select_op=$(".select_op");
         xianshi();
         clickAnglar();
     },1000);
@@ -107,6 +105,7 @@ function clickAnglar(){
     var op=$(".select_op");//得到 .select_op
     var judge=$.trim(op.val());
     var tr="";
+    var fun=optionTr();
         /********************************   添加新产品   **********************************/
     $(".addpro").click(function (event) {
         event.preventDefault();
@@ -152,12 +151,14 @@ function clickAnglar(){
     });
     op.mouseleave(function () {
         var val=$.trim($(this).val());//selest 的 value
-        if (val!="-请选择-"){
+        var Xhtml="<tr><td>出价人</td><td>产品</td><td>方向</td><td>单价</td><td>数量</td><td>出价时间</td><td>操作</td></tr>";
+        $("#BidManagement").html(Xhtml+fun(val));//修改neirong
+        xianshi();//启动分页
+        /*if (val!="-请选择-"){
             if (judge=="-请选择-"){
-                tr=select_op(val);
+
             }else if (judge!="-请选择-"&&judge!=val){
                 $("#BidManagement").html(function () {
-                    var Xhtml="<tr><td>出价人</td><td>产品</td><td>方向</td><td>单价</td><td>数量</td><td>出价时间</td><td>操作</td></tr>";
                     for (var i=0;i<tr.length;i++){
                         Xhtml+="<tr>"+tr[i].innerHTML+"</tr>";
                     }
@@ -166,7 +167,7 @@ function clickAnglar(){
                 xianshi();//启动分页
             }
             judge=val;
-        }
+        }*/
     });
     /*******************************************************************************************/
     li.click(function (event) {
@@ -214,10 +215,32 @@ function option(x){
     }
     return tmp;
 }//************************ selest 获得不相同的 option
-function select_op(val){
+/*function select_op(val){
     var tr=$('.section_details table tr:not([name*="'+val+'"])');//获得非 value的tr
     tr.splice(0,1);// 去掉第一个tr
     tr.remove();//删除 被选中tr
     xianshi();//启动分页
     return tr;//返回 被选中的tr
+}*/
+function optionTr() {
+    var option=$(".select_op option:not(:nth-child(1))");//option的 内容
+    var all={};
+    for (var i=0;i<option.length;i++){
+        all[$.trim(option[i].innerHTML)]="";
+    }
+    var r=0;
+    for (x in all){
+        var val=$.trim(option[r].innerHTML);
+        var tr=$("tr[name*="+val+"]");//获得val对应的tr
+        var html="";
+        for (var c=0;c<tr.length;c++){
+            html+="<tr>"+tr[0].innerHTML+"</tr>";
+        }
+        all[val]=html;//对应option  生成的对应内容
+        r++;
+    }
+    return function (names){
+        return all[names];
+    };
+    //return all;
 }
